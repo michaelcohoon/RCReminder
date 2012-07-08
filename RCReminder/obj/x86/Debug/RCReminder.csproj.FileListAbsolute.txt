@@ -1,0 +1,10 @@
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\bin\Debug\RCReminder.exe
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\bin\Debug\RCReminder.pdb
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\ResolveAssemblyReference.cache
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.EntryPoint.resources
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.Properties.Resources.resources
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.Settings.resources
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\GenerateResource.read.1.tlog
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\GenerateResource.write.1.tlog
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.exe
+Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.pdb
