@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="question.ico" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

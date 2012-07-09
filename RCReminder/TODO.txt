@@ -1,0 +1,7 @@
+﻿Don't display notification is the check box is unchecked
+Add support for "Remind me at these times"
+If "Remind me every" or "Remind me at these times" are unchecked, don't display those/try to get that data
+Don't update until save pressed
+If reset, don't update until save pressed
+If close Settings and reopen, there's a bug
+New icon

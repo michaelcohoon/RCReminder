@@ -68,6 +68,8 @@ namespace RCReminder
         private void saveButton_Click(object sender, EventArgs e)
         {
             //Close the window after saving the changes
+            //Make sure the hours =< 24 and minuts =< 60
+            //--if not, don't save, keep values in fields, display modal popup
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -93,12 +95,31 @@ namespace RCReminder
                 e.Handled = true;
         }
 
-        public int GetDisplayTime()
+        /// <summary>
+        /// Returns a TimeSpan for how often to display the notification.
+        /// </summary>
+        /// <returns>A TimeSpan containing the notification frequency.</returns>
+        public TimeSpan GetNotificationFrequency()
         {
-            //Returns the number the in milliseconds of the time entered in the hoursTexBox and the minutesTextBox
-            int i = (int.Parse(this.hoursTextBox.Text) * 60 * 60);
-            int j = (int.Parse(this.minutesTextBox.Text) * 60);
-            return (i + j) * 10;
+            
+            int days = 0;
+            int hrs = int.Parse(this.hoursTextBox.Text);
+            int mins = int.Parse(this.minutesTextBox.Text);
+
+            if (mins == 60)
+            {
+                mins = 0;
+                hrs++;
+            }
+
+            if (hrs == 24)
+            {
+                hrs = 0;
+                days++;
+            }
+
+            TimeSpan span = new TimeSpan(days, hrs, mins, 0, 0);
+            return span;
         }
     }
 }

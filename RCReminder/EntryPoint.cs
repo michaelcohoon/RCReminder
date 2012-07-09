@@ -15,12 +15,13 @@ namespace RCReminder
         private System.Windows.Forms.MenuItem exitMenuItem;
         private System.Windows.Forms.MenuItem settingsMenuItem;
         private int timeToDisplay = 100;
-        private int time = 0;
+        private DateTime nextTimeToNotify = DateTime.Now + new TimeSpan(0, 1, 0, 0, 0);
         Settings settingsForm;
 
         public EntryPoint()
         {
             this.settingsForm = new Settings();
+            nextTimeToNotify = DateTime.Now + this.settingsForm.GetNotificationFrequency();
 
             InitializeComponent();
 
@@ -81,17 +82,11 @@ namespace RCReminder
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (++time >= timeToDisplay)
+            if (DateTime.Now >= nextTimeToNotify)
             {
-                this.notifyIcon.ShowBalloonTip(100, "Are you dreaming?", "Question reality.", ToolTipIcon.None);
-                time = 0;
+                this.notifyIcon.ShowBalloonTip(100, "Are you dreaming?", "Question Reality", ToolTipIcon.None);
+                nextTimeToNotify = DateTime.Now + this.settingsForm.GetNotificationFrequency();
             }
-        }
-
-        private void SetUpdateTime()
-        {
-            timeToDisplay = this.settingsForm.GetDisplayTime();
-            time = 0;
         }
     }
 }

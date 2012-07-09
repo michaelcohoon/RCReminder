@@ -41,7 +41,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            this.SetUpdateTime();
             this.timer1.Start();
             // 
             // EntryPoint
