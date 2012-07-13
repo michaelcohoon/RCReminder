@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -12,7 +13,9 @@ namespace RCReminder
 {
     public partial class Settings : Form
     {
-        Boolean notify = true;
+        public Boolean notify;
+        public Boolean notifyViaEvery;
+        public Boolean notifyViaAtTimes;
 
         public Settings()
         {
@@ -21,6 +24,10 @@ namespace RCReminder
             // Set up how the form should be displayed.
             this.ClientSize = new System.Drawing.Size(361, 311);
             this.Text = "Settings - RCReminder";
+            this.Icon = new Icon("rc_icon1.ico");
+            this.notify = this.notifyCheckBox.Checked;
+            this.notifyViaEvery = this.remindEveryCheckBox.Checked;
+            this.notifyViaAtTimes = this.remindAtTimeCheckBox.Checked;
 
             // Define the border style of the form to a dialog box.
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -32,19 +39,16 @@ namespace RCReminder
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void notify_CheckedChanged(object sender, EventArgs e)
-        {
-            notify = !notify;
-        }
-
         private void remindAtTime_CheckedChanged(object sender, EventArgs e)
         {
             this.remindAtTimePanel.Enabled = this.remindAtTimeCheckBox.Checked;
+            this.notifyViaAtTimes = this.remindAtTimeCheckBox.Checked;
         }
 
         private void remindEveryCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             this.remindEveryPanel.Enabled = this.remindEveryCheckBox.Checked;
+            this.notifyViaEvery = this.remindEveryCheckBox.Checked;
         }
 
         private void resetButton_Click(object sender, EventArgs e)
@@ -70,11 +74,30 @@ namespace RCReminder
             //Close the window after saving the changes
             //Make sure the hours =< 24 and minuts =< 60
             //--if not, don't save, keep values in fields, display modal popup
+
+            string[] fileContents = new string[13];
+
+            fileContents[0]  = this.remindEveryCheckBox.Checked.ToString();
+            fileContents[1]  = this.remindEveryPanel.Enabled.ToString();
+            fileContents[2]  = this.hoursTextBox.Text.ToString();
+            fileContents[3]  = this.minutesTextBox.Text.ToString();
+            fileContents[4]  = this.remindAtTimeCheckBox.Checked.ToString();
+            fileContents[5]  = this.remindAtTimePanel.Enabled.ToString();
+            fileContents[6]  = this.hoursComboBox1.SelectedItem.ToString();
+            fileContents[7]  = this.hoursComboBox2.SelectedItem.ToString();
+            fileContents[8]  = this.hoursComboBox3.SelectedItem.ToString();
+            fileContents[9]  = this.minutesComboBox1.SelectedItem.ToString();
+            fileContents[10] = this.minutesComboBox2.SelectedItem.ToString();
+            fileContents[11] = this.minutesComboBox3.SelectedItem.ToString();
+            fileContents[12] = this.notifyCheckBox.Checked.ToString();
+
+            File.WriteAllLines(@"C:\Users\Mike\Desktop\RCREMINDER.SETTINGS", fileContents);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             //Close the window after disregarding the changes
+            this.Hide();
         }
 
         private void hoursTextBox_KeyDown(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -120,6 +143,11 @@ namespace RCReminder
 
             TimeSpan span = new TimeSpan(days, hrs, mins, 0, 0);
             return span;
+        }
+
+        private void notifyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            this.notify = this.notifyCheckBox.Checked;
         }
     }
 }

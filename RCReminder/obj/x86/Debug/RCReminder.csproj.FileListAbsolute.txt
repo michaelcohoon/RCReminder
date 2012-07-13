@@ -8,3 +8,13 @@ Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x8
 Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\GenerateResource.write.1.tlog
 Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.exe
 Q:\Users\Mike\Documents\Visual Studio 2010\Projects\RCReminder\RCReminder\obj\x86\Debug\RCReminder.pdb
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\RCReminder.exe
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\RCReminder.pdb
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\bin\Debug\RCReminder.exe
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\bin\Debug\RCReminder.pdb
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\RCReminder.EntryPoint.resources
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\RCReminder.Properties.Resources.resources
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\RCReminder.Settings.resources
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mike\Documents\GitHub\RCReminder\RCReminder\obj\x86\Debug\GenerateResource.write.1.tlog
