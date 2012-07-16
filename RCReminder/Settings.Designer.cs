@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-
+            
             base.Dispose(disposing);
         }
 
@@ -110,7 +110,7 @@
             this.notifyCheckBox.TabIndex = 4;
             this.notifyCheckBox.Text = "Display Notifications";
             this.notifyCheckBox.UseVisualStyleBackColor = true;
-            this.notifyCheckBox.CheckedChanged += new System.EventHandler(this.notify_CheckedChanged);
+            this.notifyCheckBox.CheckedChanged += new System.EventHandler(this.notifyCheckBox_CheckedChanged);
             // 
             // remindEveryPanel
             // 
@@ -179,6 +179,7 @@
             this.hoursComboBox3.Name = "hoursComboBox3";
             this.hoursComboBox3.Size = new System.Drawing.Size(121, 21);
             this.hoursComboBox3.TabIndex = 0;
+            this.hoursComboBox3.Text = " ";
             // 
             // hoursComboBox2
             // 
@@ -214,6 +215,7 @@
             this.hoursComboBox2.Name = "hoursComboBox2";
             this.hoursComboBox2.Size = new System.Drawing.Size(121, 21);
             this.hoursComboBox2.TabIndex = 1;
+            this.hoursComboBox2.Text = " ";
             // 
             // hoursComboBox1
             // 
@@ -249,6 +251,7 @@
             this.hoursComboBox1.Name = "hoursComboBox1";
             this.hoursComboBox1.Size = new System.Drawing.Size(121, 21);
             this.hoursComboBox1.TabIndex = 2;
+            this.hoursComboBox1.Text = " ";
             // 
             // minutesComboBox3
             // 
@@ -264,6 +267,7 @@
             this.minutesComboBox3.Name = "minutesComboBox3";
             this.minutesComboBox3.Size = new System.Drawing.Size(121, 21);
             this.minutesComboBox3.TabIndex = 3;
+            this.minutesComboBox3.Text = " ";
             // 
             // minutesComboBox2
             // 
@@ -279,6 +283,7 @@
             this.minutesComboBox2.Name = "minutesComboBox2";
             this.minutesComboBox2.Size = new System.Drawing.Size(121, 21);
             this.minutesComboBox2.TabIndex = 4;
+            this.minutesComboBox2.Text = " ";
             // 
             // minutesComboBox1
             // 
@@ -294,6 +299,7 @@
             this.minutesComboBox1.Name = "minutesComboBox1";
             this.minutesComboBox1.Size = new System.Drawing.Size(121, 21);
             this.minutesComboBox1.TabIndex = 5;
+            this.minutesComboBox1.Text = " ";
             // 
             // remindEveryCheckBox
             // 

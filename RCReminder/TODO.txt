@@ -1,7 +1,18 @@
-﻿Don't display notification is the check box is unchecked
+﻿What has to be done:
+=================================================================================================================================
 Add support for "Remind me at these times"
 If "Remind me every" or "Remind me at these times" are unchecked, don't display those/try to get that data
 Don't update until save pressed
 If reset, don't update until save pressed
 If close Settings and reopen, there's a bug
-New icon
+Create a RCReminder.SETTINGS file to save the information into
+  - 1 data entry per line at first
+  - then JSON once that is working
+=================================================================================================================================
+
+
+What has been done:
+=================================================================================================================================
+New icon                                                                                                              07/11/2012   
+Don't display notification is the check box is unchecked                                                              07/11/2012
+=================================================================================================================================

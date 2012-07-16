@@ -14,12 +14,12 @@ namespace RCReminder
         private System.Windows.Forms.ContextMenu contextMenu;
         private System.Windows.Forms.MenuItem exitMenuItem;
         private System.Windows.Forms.MenuItem settingsMenuItem;
-        private int timeToDisplay = 100;
         private DateTime nextTimeToNotify = DateTime.Now + new TimeSpan(0, 1, 0, 0, 0);
         Settings settingsForm;
 
         public EntryPoint()
         {
+            this.Hide();
             this.settingsForm = new Settings();
             nextTimeToNotify = DateTime.Now + this.settingsForm.GetNotificationFrequency();
 
@@ -29,6 +29,7 @@ namespace RCReminder
             this.contextMenu = new System.Windows.Forms.ContextMenu();
             this.exitMenuItem = new System.Windows.Forms.MenuItem();
             this.settingsMenuItem = new System.Windows.Forms.MenuItem();
+            this.Icon = new Icon("rc_icon1.ico");
             
             // Initialize contextMenu1
             this.contextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] { this.settingsMenuItem, this.exitMenuItem });
@@ -52,7 +53,7 @@ namespace RCReminder
 
             // The Icon property sets the icon that will appear
             // in the systray for this application.
-            notifyIcon.Icon = new Icon("question.ico");
+            notifyIcon.Icon = new Icon("rc_icon1.ico");
 
             // The ContextMenu property sets the menu that will
             // appear when the systray icon is right clicked.
@@ -84,7 +85,11 @@ namespace RCReminder
         {
             if (DateTime.Now >= nextTimeToNotify)
             {
-                this.notifyIcon.ShowBalloonTip(100, "Are you dreaming?", "Question Reality", ToolTipIcon.None);
+                if (this.settingsForm.notify)
+                {
+                    this.notifyIcon.ShowBalloonTip(100, "Are you dreaming?", "Question Reality", ToolTipIcon.None);
+                }
+
                 nextTimeToNotify = DateTime.Now + this.settingsForm.GetNotificationFrequency();
             }
         }
